@@ -1,11 +1,11 @@
 {
 	"manifest_version": "ext-v1",
-	"name": "TLDraw - A very good whiteboard",
-	"version": "1.0.3",
+	"name": "JS Paint - A MS Paint remake for EXT",
+	"version": "1.0.0",
 	"short_name": "TLDraw",
-	"description": "A collaborative digital whiteboard available at tldraw.com. Its editor, user interface, and other underlying libraries are open source and available in this repository. They are also distributed on npm. You can use tldraw to create a drop-in whiteboard for your product or as the foundation on which to build your own infinite canvas applications.",
+	"description": "A pixel-perfect web-based MS Paint remake and more. JS Paint recreates every tool and menu of MS Paint, and even little-known features, to a high degree of fidelity.",
 	"author": "EXT, Inc.",
-	"homepage_url": "https://tldraw.com/",
+	"homepage_url": "https://jspaint.app/about",
 	"icons": {
 		"128": "icon-128.png",
 		"background": "icon-background.png",

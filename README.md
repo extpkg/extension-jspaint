@@ -1,4 +1,4 @@
-# TLDraw Extension
+# JS Paint Extension
 
 ---
 

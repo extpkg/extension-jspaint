@@ -1,4 +1,4 @@
-// TLDraw EXT extension
+// JS Paint EXT extension
 
 // Global resources
 let entries = []
@@ -18,18 +18,19 @@ ext.runtime.onExtensionClick.addListener(async () => {
 
     // Create window
     const window = await ext.windows.create({
-      title: 'TLDraw - #' + partition,
+      title: 'JS Paint - #' + partition,
       icon: 'icon-128.png',
-      titleBarStyle: 'default',
+      titleBarStyle: 'inset',
       fullscreenable: true,
+      roundedCorners: false,
       vibrancy: false,
-      frame: true,
+      frame: false,
     })
 
     // Create tab
     const tab = await ext.tabs.create({
       icon: 'icon-128.png',
-      text: 'TLDraw - #' + partition,
+      text: 'JS Paint - #' + partition,
       mutable: false,
       closable: true,
     })
@@ -44,9 +45,9 @@ ext.runtime.onExtensionClick.addListener(async () => {
     // Create webview
     const webview = await ext.webviews.create({ websession: websession })
     const size = await ext.windows.getContentSize(window.id)
-    await ext.webviews.loadFile(webview.id, 'src/index.html')
+    await ext.webviews.loadFile(webview.id, 'jspaint/index.html')
     await ext.webviews.attach(webview.id, window.id)
-    await ext.webviews.setBounds(webview.id, { x: 0, y: 0, width: size.width, height: size.height })
+    await ext.webviews.setBounds(webview.id, { x: 0, y: 25, width: size.width, height: size.height - 25 })
     await ext.webviews.setAutoResize(webview.id, { width: true, height: true })
 
     // Save entry
