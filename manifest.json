@@ -2,8 +2,8 @@
 	"manifest_version": "ext-v1",
 	"name": "JS Paint - A MS Paint remake for EXT",
 	"version": "1.0.0",
-	"short_name": "TLDraw",
-	"description": "A pixel-perfect web-based MS Paint remake and more. JS Paint recreates every tool and menu of MS Paint, and even little-known features, to a high degree of fidelity.",
+	"short_name": "JS Paint",
+	"description": "A pixel-perfect MS Paint remake for EXT and more. JS Paint recreates every tool and menu of MS Paint, and even little-known features, to a high degree of fidelity.",
 	"author": "EXT, Inc.",
 	"homepage_url": "https://jspaint.app/about",
 	"icons": {
