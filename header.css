@@ -120,3 +120,45 @@ body>.window-titlebar {
 .os-window.tool-window .window-titlebar {
     height: 15px;
 }
+
+.os-window .window-titlebar,
+body>.window-titlebar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.os-window .window-title-area {
+    position: relative;
+    flex: 1;
+}
+
+.os-window .window-titlebar .icon {
+    vertical-align: bottom;
+}
+
+.os-window .window-title-area {
+    height: 16px;
+}
+
+.os-window.tool-window .window-title-area {
+    height: 14px;
+}
+
+.os-window .window-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: inline-block !important;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 2px;
+}
