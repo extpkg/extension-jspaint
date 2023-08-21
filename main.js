@@ -10,7 +10,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
     // Get websession partition
     let partition = 1
     for (let i = 0; i < entries.length; i++) {
-      if (entries[i][4] == partition) {
+      if (entries[i][5] == partition) {
         partition++
         i = 0
       }
@@ -42,16 +42,26 @@ ext.runtime.onExtensionClick.addListener(async () => {
       global: false,
     })
 
-    // Create webview
-    const webview = await ext.webviews.create({ websession: websession })
+    // Create webviews
     const size = await ext.windows.getContentSize(window.id)
+    // Load Header content
+    const webviewHeader = await ext.webviews.create({ websession: websession })
+    await ext.webviews.loadFile(webviewHeader.id, 'header.html')
+    await ext.webviews.attach(webviewHeader.id, window.id)
+    await ext.webviews.setBounds(webviewHeader.id, { x: 0, y: 0, width: size.width, height: size.height })
+    await ext.webviews.setAutoResize(webviewHeader.id, { width: true, height: false })
+    // Load JS Paint content
+    const webview = await ext.webviews.create({ websession: websession })
     await ext.webviews.loadFile(webview.id, 'jspaint/index.html')
     await ext.webviews.attach(webview.id, window.id)
-    await ext.webviews.setBounds(webview.id, { x: 0, y: 25, width: size.width, height: size.height - 25 })
+    await ext.webviews.setBounds(webview.id, { x: 4, y: 21, width: size.width - 8, height: size.height - 25 })
     await ext.webviews.setAutoResize(webview.id, { width: true, height: true })
+    // Open devtools
+    await ext.webviews.openDevTools(webviewHeader.id, { mode: 'detach' })
+    await ext.webviews.openDevTools(webview.id, { mode: 'detach' })
 
     // Save entry
-    entries.push([window, tab, websession, webview, partition])
+    entries.push([window, tab, websession, webview, webviewHeader, partition])
 
   } catch (error) {
 
