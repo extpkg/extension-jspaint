@@ -18,7 +18,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
 
     // Create window
     const window = await ext.windows.create({
-      title: 'JS Paint - #' + partition,
+      title: 'untitled - JS Paint #' + partition,
       icon: 'icon-128.png',
       titleBarStyle: 'inset',
       fullscreenable: true,
@@ -30,7 +30,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
     // Create tab
     const tab = await ext.tabs.create({
       icon: 'icon-128.png',
-      text: 'JS Paint - #' + partition,
+      text: 'untitled - JS Paint #' + partition,
       mutable: false,
       closable: true,
     })
