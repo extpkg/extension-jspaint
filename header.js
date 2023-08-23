@@ -34,9 +34,13 @@ async function clickMaximize() {
         const isMaximized = await ext.windows.isMaximized(window.id);
         if (isMaximized) {
             await ext.windows.unmaximize(window.id);
+            document.getElementsByClassName('window-action-restore')[0].classList.add('window-action-maximize');
+            document.getElementsByClassName('window-action-restore')[0].classList.remove('window-action-restore');
             return;
         }
         await ext.windows.maximize(window.id);
+        document.getElementsByClassName('window-action-maximize')[0].classList.add('window-action-restore');
+        document.getElementsByClassName('window-action-maximize')[0].classList.remove('window-action-maximize');
     } catch (error) {
         console.error(error);
     }

@@ -60,7 +60,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
     await ext.webviews.setAutoResize(webview.id, { width: true, height: true })
     // Open devtools
     // await ext.webviews.openDevTools(webviewHeader.id, { mode: 'detach' })
-    // await ext.webviews.openDevTools(webview.id, { mode: 'detach' })
+    await ext.webviews.openDevTools(webview.id, { mode: 'detach' })
 
     // Save entry
     entries.push([window, tab, websession, webview, webviewHeader, partition])
