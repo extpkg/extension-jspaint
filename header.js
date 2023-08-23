@@ -27,3 +27,28 @@ async function clickClose() {
     }
 }
 
+async function clickMaximize() {
+    try {
+        const webview = await ext.webviews.getCurrent();
+        const window = await ext.webviews.getAttachedWindow(webview.id);
+        const isMaximized = await ext.windows.isMaximized(window.id);
+        if (isMaximized) {
+            await ext.windows.unmaximize(window.id);
+            return;
+        }
+        await ext.windows.maximize(window.id);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function clickMinimize() {
+    try {
+        const webview = await ext.webviews.getCurrent();
+        const window = await ext.webviews.getAttachedWindow(webview.id);
+        await ext.windows.minimize(window.id);
+    } catch (error) {
+        console.error(error);
+    }
+}
+

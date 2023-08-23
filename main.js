@@ -24,6 +24,9 @@ ext.runtime.onExtensionClick.addListener(async () => {
       roundedCorners: false,
       vibrancy: false,
       frame: false,
+      minimizable: true,
+      maximizable: true,
+      fullscreenable: false,
     })
 
     // Create tab
