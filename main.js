@@ -51,7 +51,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
     await ext.webviews.attach(webviewHeader.id, window.id)
     await ext.webviews.loadFile(webviewHeader.id, 'header.html')
     await ext.webviews.setBounds(webviewHeader.id, { x: 0, y: 0, width: size.width, height: size.height })
-    await ext.webviews.setAutoResize(webviewHeader.id, { width: true, height: false })
+    await ext.webviews.setAutoResize(webviewHeader.id, { width: true, height: true })
     // Load JS Paint content
     const webview = await ext.webviews.create({ websession: websession })
     await ext.webviews.attach(webview.id, window.id)
@@ -60,7 +60,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
     await ext.webviews.setAutoResize(webview.id, { width: true, height: true })
     // Open devtools
     // await ext.webviews.openDevTools(webviewHeader.id, { mode: 'detach' })
-    await ext.webviews.openDevTools(webview.id, { mode: 'detach' })
+    // await ext.webviews.openDevTools(webview.id, { mode: 'detach' })
 
     // Save entry
     entries.push([window, tab, websession, webview, webviewHeader, partition])
