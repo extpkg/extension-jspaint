@@ -7,12 +7,12 @@
 	"author": "EXT, Inc.",
 	"homepage_url": "https://jspaint.app/about",
 	"icons": {
-		"128": "icon-128.png",
-		"background": "icon-background.png",
-		"banner": "icon-banner.png",
-		"128-dark": "icon-128-dark.png",
-		"background-dark": "icon-background-dark.png",
-		"banner-dark": "icon-banner-dark.png"
+		"128": "icons/icon-128.png",
+		"background": "icons/icon-background.png",
+		"banner": "icons/icon-banner.png",
+		"128-dark": "icons/icon-128-dark.png",
+		"background-dark": "icons/icon-background-dark.png",
+		"banner-dark": "icons/icon-banner-dark.png"
 	},
 	"scripts": [
 		"main.js"
