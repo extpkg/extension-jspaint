@@ -1,0 +1,3 @@
+[submodule "src/extension-jspaint-src"]
+	path = src/extension-jspaint-src
+	url = git@github.com:extpkg/extension-jspaint-src.git
