@@ -1,8 +1,6 @@
 /// <reference lib="dom" />
 
-interface FocusEvent {
-    id: string;
-}
+const _global = window as any
 
 window.addEventListener('DOMContentLoaded', async (): Promise<void> => {
   const webview = await ext.webviews.getCurrent()
@@ -12,18 +10,18 @@ window.addEventListener('DOMContentLoaded', async (): Promise<void> => {
   if (isFocused) {
     document.getElementsByClassName('window')[0].classList.add('focused')
   }
-  ext.windows.onFocused.addListener(async (event: FocusEvent): Promise<void> => {
+  ext.windows.onFocused.addListener(async (event: ext.windows.WindowEvent): Promise<void> => {
     if (extwindow?.id !== event.id) return
     document.getElementsByClassName('window')[0].classList.add('focused')
   })
 
-  ext.windows.onUnfocused.addListener(async (event: FocusEvent): Promise<void> => {
+  ext.windows.onUnfocused.addListener(async (event: ext.windows.WindowEvent): Promise<void> => {
     if (extwindow?.id !== event.id) return
     document.getElementsByClassName('window')[0].classList.remove('focused')
   })
 })
 
-export async function clickClose(): Promise<void> {
+_global.clickClose = async () => {
   try {
     const webview = await ext.webviews.getCurrent()
     const extwindow = await ext.webviews.getAttachedWindow(webview.id)
@@ -34,7 +32,7 @@ export async function clickClose(): Promise<void> {
   }
 }
 
-export async function clickMaximize(): Promise<void> {
+_global.clickMaximize = async () => {
   try {
     const webview = await ext.webviews.getCurrent()
     const extwindow = await ext.webviews.getAttachedWindow(webview.id)
@@ -56,7 +54,7 @@ export async function clickMaximize(): Promise<void> {
   }
 }
 
-export async function clickMinimize(): Promise<void> {
+_global.clickMinimize = async () => {
   try {
     const webview = await ext.webviews.getCurrent()
     const extwindow = await ext.webviews.getAttachedWindow(webview.id)

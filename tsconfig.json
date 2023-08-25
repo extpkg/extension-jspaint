@@ -23,6 +23,6 @@
   ],
   "exclude": [
     "./node_modules",
-    "./src/jspaint"
+    "./src/extension-jspaint-src"
   ]
 }
