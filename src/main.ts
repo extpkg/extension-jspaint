@@ -7,6 +7,7 @@ interface Entry {
   websession: ext.websessions.Websession
   webview: ext.webviews.Webview
   webviewHeader: ext.webviews.Webview
+  webviewHeaderOverlay: ext.webviews.Webview
   partition: number
 }
 
@@ -58,11 +59,18 @@ ext.runtime.onExtensionClick.addListener(async () => {
     const size = await ext.windows.getContentSize(window.id)
     
     // Load Header content
-    const webviewHeader = await ext.webviews.create({ websession: websession })
+    const webviewHeader = await ext.webviews.create()
     await ext.webviews.attach(webviewHeader.id, window.id)
     await ext.webviews.loadFile(webviewHeader.id, 'header.html')
     await ext.webviews.setBounds(webviewHeader.id, { x: 0, y: 0, width: size.width, height: size.height })
     await ext.webviews.setAutoResize(webviewHeader.id, { width: true, height: true })
+
+    // Load Header overlay content (needed for double-click to maximize)
+    const webviewHeaderOverlay = await ext.webviews.create()
+    await ext.webviews.attach(webviewHeaderOverlay.id, window.id)
+    await ext.webviews.loadFile(webviewHeaderOverlay.id, 'header-overlay.html')
+    await ext.webviews.setBounds(webviewHeaderOverlay.id, { x: 0, y: 0, width: size.width, height: size.height })
+    await ext.webviews.setAutoResize(webviewHeaderOverlay.id, { width: true, height: true })
     
     // Load JS Paint content
     const webview = await ext.webviews.create({ websession: websession })
@@ -72,7 +80,8 @@ ext.runtime.onExtensionClick.addListener(async () => {
     await ext.webviews.setAutoResize(webview.id, { width: true, height: true })
 
     // Open devtools
-    await ext.webviews.openDevTools(webviewHeader.id, { mode: 'detach' })
+    // await ext.webviews.openDevTools(webviewHeader.id, { mode: 'detach' })
+    await ext.webviews.openDevTools(webviewHeaderOverlay.id, { mode: 'detach' })
     // await ext.webviews.openDevTools(webview.id, { mode: 'detach' })
     
     // Save entry
@@ -82,6 +91,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
       websession: websession,
       webview: webview,
       webviewHeader: webviewHeader,
+      webviewHeaderOverlay: webviewHeaderOverlay,
       partition: partition,
     })
 
@@ -124,6 +134,7 @@ async function removeEntry(entry: Entry): Promise<void> {
   await ext.websessions.remove(entry.websession.id)
   await ext.webviews.remove(entry.webview.id)
   await ext.webviews.remove(entry.webviewHeader.id)
+  await ext.webviews.remove(entry.webviewHeaderOverlay.id)
 }
 
 // Tab was removed by another extension
