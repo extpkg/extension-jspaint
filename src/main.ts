@@ -72,7 +72,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
     await ext.webviews.setAutoResize(webview.id, { width: true, height: true })
 
     // Open devtools
-    await ext.webviews.openDevTools(webviewHeader.id, { mode: 'detach' })
+    // await ext.webviews.openDevTools(webviewHeader.id, { mode: 'detach' })
     // await ext.webviews.openDevTools(webview.id, { mode: 'detach' })
     
     // Save entry
@@ -93,11 +93,52 @@ ext.runtime.onExtensionClick.addListener(async () => {
   }
 })
 
+// Run on page load
+ext.webviews.onDomReady.addListener(async (event) => {
+  try {
+    const entry = getEntryFromWebviewId(event.id, false)
+    if (entry === null) return
+    const title = await ext.webviews.getTitle(entry.webview.id, '') // FIXME: When Casper updates the Types, remove the empty string here!
+    const formattedTitle = title.replace(new RegExp(' - Paint$'), ' - JS Paint #' + entry.partition)
+    await ext.runtime.sendMessage({ type: 'title', title: formattedTitle, id: entry.websession.id })
+  } catch (error) {
+    // Print error
+    console.error('ext.webviews.onDomReady', JSON.stringify(error))
+  }
+})
+
+// Sync tab tiltes and header
+ext.webviews.onPageTitleUpdated.addListener(async (event, details) => {
+  try {
+    const entry = getEntryFromWebviewId(event.id, false)
+    if (entry === null) return
+    const title = details.title.replace(new RegExp(' - Paint$'), ' - JS Paint #' + entry.partition)
+    await ext.runtime.sendMessage({ type: 'title', title: title, id: entry.websession.id })
+    await ext.tabs.update(entry.tab.id, { text: title })
+    await ext.windows.update(entry.window.id, { title: title })
+  } catch (error) {
+    // Print error
+    console.error('ext.webviews.onPageTitleUpdated', JSON.stringify(error))
+  }
+})
+
 // Get and optionally remove entry from tab id
 function getEntryFromTabId(id: string, remove: boolean): Entry | null {
   for (let i = 0; i < entries.length; i++) {
     const entry = entries[i]
     if (entry.tab.id == id) {
+      if (remove) entries.splice(i, 1)
+      return entry
+    }
+  }
+  return null
+}
+
+// Get and optionally remove entry from tab id
+function getEntryFromWebviewId(id: string, remove: boolean): Entry | null {
+  for (let i = 0; i < entries.length; i++) {
+    const entry = entries[i]
+    if (entry.webview.id == id) {
       if (remove) entries.splice(i, 1)
       return entry
     }

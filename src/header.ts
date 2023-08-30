@@ -19,6 +19,19 @@ window.addEventListener('DOMContentLoaded', async (): Promise<void> => {
     if (extwindow?.id !== event.id) return
     document.getElementsByClassName('window')[0].classList.remove('focused')
   })
+
+  ext.runtime.onMessage.addListener(async (_event, message) => {
+    if (message.type === 'title') {
+      if (message.id !== webview.websession?.id) return
+      document.getElementsByClassName('window-title')[0].innerHTML = message.title
+    } else if (message.type === 'theme') {
+      const themeElement = document.getElementById('stylesheet-theme')
+      if (themeElement === null) return
+      if (message.id !== webview.websession?.id) return
+      themeElement.setAttribute('href', 'styles/header-theme-' + message.theme)
+    }
+  })
+  await ext.runtime.sendMessage({ type: 'header' })
 })
 
 _global.clickClose = async () => {
