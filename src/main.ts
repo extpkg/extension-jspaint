@@ -30,7 +30,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
     const window = await ext.windows.create({
       title: 'untitled - JS Paint #' + partition,
       icon: 'icon-128.png',
-      titleBarStyle: 'inset',
+      titleBarStyle: 'hidden',
       fullscreenable: false,
       roundedCorners: false,
       vibrancy: false,
@@ -98,7 +98,7 @@ ext.webviews.onDomReady.addListener(async (event) => {
   try {
     const entry = getEntryFromWebviewId(event.id, false)
     if (entry === null) return
-    const title = await ext.webviews.getTitle(entry.webview.id, '') // FIXME: When Casper updates the Types, remove the empty string here!
+    const title = await ext.webviews.getTitle(entry.webview.id)
     const formattedTitle = title.replace(new RegExp(' - Paint$'), ' - JS Paint #' + entry.partition)
     await ext.runtime.sendMessage({ type: 'title', title: formattedTitle, id: entry.websession.id })
   } catch (error) {
