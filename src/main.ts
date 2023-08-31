@@ -42,6 +42,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
     // Create tab
     const tab = await ext.tabs.create({
       icon: 'icons/icon-128.png',
+      icon_dark: 'icons/icon-128-dark.png',
       text: 'untitled - JS Paint #' + partition,
       mutable: false,
       closable: true,
