@@ -2,8 +2,15 @@
 
 ---
 
-Steps to re-create this extension's `jspaint` directory:
+Steps to re-create this extension:
 
-1. Clone the `jspaint` repository: [git@github.com:1j01/jspaint.git](https://github.com/1j01/jspaint.git)
-2. `cd` into the cloned repository & run `npm install` to install dependencies
-3. Move the `jspaint` directory to the root of this repository
+```bash
+# Clone the repo and its submodules
+git clone --recursive git@github.com:extpkg/extension-jspaint.git
+# Change into the repo directory
+cd extension-jspaint
+# Install dependencies and build
+npm install
+npm run build
+# Then, drag the 'dist' folder into the manual install modal's drop zone.
+```
