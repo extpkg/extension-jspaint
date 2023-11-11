@@ -16,6 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SRC_SSH_KEY }}
+
+      - run: |
+          git submodule update --init
+
       - uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
