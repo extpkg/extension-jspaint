@@ -1,16 +1,17 @@
-# JS Paint Extension
+# JS Paint
 
----
+A pixel-perfect MS Paint remake for EXT and more. JS Paint recreates every tool
+and menu of MS Paint, and even little-known features, to a high degree of
+fidelity.
 
-Steps to re-create this extension:
+## Build
 
-```bash
-# Clone the repo and its submodules
-git clone --recursive git@github.com:extpkg/extension-jspaint.git
-# Change into the repo directory
-cd extension-jspaint
-# Install dependencies and build
-npm install
-npm run build
-# Then, drag the 'dist' folder into the manual install modal's drop zone.
-```
+1. Clone the repository
+2. Run `npm install` to install node dependencies
+3. Run `npm run build` to build the extension
+4. Copy the `dist` directory into EXT
+
+## Development
+
+Run `npm run dev` to watch `src` and `public` directories and rebuild the
+project on changes

@@ -1,0 +1,32 @@
+{
+  "manifest_version": "ext-v1",
+  "name": "JS Paint - A MS Paint remake for EXT.",
+  "version": "1.0.0",
+  "short_name": "JS Paint",
+  "description": "A pixel-perfect MS Paint remake for EXT and more. JS Paint recreates every tool and menu of MS Paint, and even little-known features, to a high degree of fidelity.",
+  "author": "EXT, Inc.",
+  "icons": {
+    "128": "assets/128.png",
+    "banner": "assets/banner.png",
+    "background": "assets/background.png"
+  },
+  "scripts": ["main.js"],
+  "modules": {
+    "runtime": {
+      "permissions": []
+    },
+    "tabs": {
+      "permissions": []
+    },
+    "windows": {
+      "permissions": []
+    },
+    "webviews": {
+      "permissions": []
+    },
+    "websessions": {
+      "permissions": [],
+      "optional_permissions": ["create.persistent"]
+    }
+  }
+}

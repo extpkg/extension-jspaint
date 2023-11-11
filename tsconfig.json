@@ -5,9 +5,7 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "module": "commonjs",
-    "lib": [
-      "ES6"
-    ],
+    "lib": ["ES6"],
     "types": [
       "@extpkg/types-console",
       "@extpkg/types-runtime",
@@ -17,12 +15,6 @@
       "@extpkg/types-windows"
     ]
   },
-  "include": [
-    "./src/main.ts",
-    "./src/header.ts"
-  ],
-  "exclude": [
-    "./node_modules",
-    "./src/extension-jspaint-src"
-  ]
+  "include": ["./src/main.ts", "./src/header.ts"],
+  "exclude": ["./node_modules", "./src/extension-jspaint-src"]
 }

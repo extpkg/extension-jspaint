@@ -1,35 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Header</title>
-    <link rel="stylesheet" href="styles/header-base.css">
-    <link id="stylesheet-theme" rel="stylesheet" href="styles/header-theme-classic.css">
-    <script src="header.js"></script>
-</head>
+    <link
+      rel="stylesheet"
+      href="./styles/header-base.css"
+    />
+    <link
+      id="stylesheet-theme"
+      rel="stylesheet"
+      href="./styles/header-theme-classic.css"
+    />
+    <script src="./header.js"></script>
+  </head>
 
-<body>
+  <body>
     <div class="window os-window">
-        <div class="window-titlebar">
-            <img src="icons/jspaint-icon-16x16.png" width="16" height="16" draggable="false"
-                style="width: 16px; height: 16px;">
-            <div class="window-title-area"><span class="window-title">untitled - JS Paint</span></div>
-            <button type="button" onclick="clickMinimize()"
-                class="window-minimize-button window-action-minimize window-button" aria-label="Minimize window">
-                <span class="window-button-icon"></span>
-            </button>
-            <button type="button" onclick="clickMaximize()"
-                class="window-maximize-button window-action-maximize window-button"
-                aria-label="Maximize or restore window">
-                <span class="window-button-icon"></span>
-            </button>
-            <button type="button" onclick="clickClose()" class="window-close-button window-action-close window-button"
-                aria-label="Close window">
-                <span class="window-button-icon"></span>
-            </button>
+      <div class="window-titlebar">
+        <img
+          src="./assets/favicon.png"
+          width="16"
+          height="16"
+          draggable="false"
+          style="width: 16px; height: 16px"
+        />
+        <div class="window-title-area">
+          <span class="window-title">untitled - JS Paint</span>
         </div>
+        <button
+          type="button"
+          onclick="clickMinimize()"
+          class="window-minimize-button window-action-minimize window-button"
+          aria-label="Minimize window"
+        >
+          <span class="window-button-icon"></span>
+        </button>
+        <button
+          type="button"
+          onclick="clickMaximize()"
+          class="window-maximize-button window-action-maximize window-button"
+          aria-label="Maximize or restore window"
+        >
+          <span class="window-button-icon"></span>
+        </button>
+        <button
+          type="button"
+          onclick="clickClose()"
+          class="window-close-button window-action-close window-button"
+          aria-label="Close window"
+        >
+          <span class="window-button-icon"></span>
+        </button>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

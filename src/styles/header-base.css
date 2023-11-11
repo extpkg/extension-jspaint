@@ -1,173 +1,219 @@
 /* Our Custom Styles */
 html {
-    height: 100%;
-    width: 100%;
-    background-color: var(--ButtonFace);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: var(--ButtonText);
-    border-image: var(--button-normal-border-image);
-    border-color: var(--ButtonLight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonLight);
-    border-style: solid;
-    border-width: 2px 2px;
-    padding: 2px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--ButtonFace);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--ButtonText);
+  border-image: var(--button-normal-border-image);
+  border-color: var(--ButtonLight) var(--ButtonShadow) var(--ButtonShadow)
+    var(--ButtonLight);
+  border-style: solid;
+  border-width: 2px 2px;
+  padding: 2px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    -webkit-app-region: drag;
+  margin: 0;
+  padding: 0;
+  -webkit-app-region: drag;
 }
 
 /* Titlebar Styles */
 .os-window .window-titlebar,
-body>.window-titlebar {
-    background: rgb(0, 0, 128);
-    background: var(--ActiveTitle);
-    background: linear-gradient(to right, rgb(0, 0, 128) 0%, rgb(16, 132, 208) 100%);
-    background: linear-gradient(to right, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%);
+body > .window-titlebar {
+  background: rgb(0, 0, 128);
+  background: var(--ActiveTitle);
+  background: linear-gradient(
+    to right,
+    rgb(0, 0, 128) 0%,
+    rgb(16, 132, 208) 100%
+  );
+  background: linear-gradient(
+    to right,
+    var(--ActiveTitle) 0%,
+    var(--GradientActiveTitle) 100%
+  );
 
-    color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 
-    color: var(--TitleText);
+  color: var(--TitleText);
 }
 
 .os-window .window-titlebar,
-body>.window-titlebar {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 12px;
+body > .window-titlebar {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
 }
 
 .os-window.rtl .window-titlebar {
-    background: linear-gradient(to left, rgb(0, 0, 128) 0%, rgb(16, 132, 208) 100%);
-    background: linear-gradient(to left, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%);
+  background: linear-gradient(
+    to left,
+    rgb(0, 0, 128) 0%,
+    rgb(16, 132, 208) 100%
+  );
+  background: linear-gradient(
+    to left,
+    var(--ActiveTitle) 0%,
+    var(--GradientActiveTitle) 100%
+  );
 }
 
 .os-window:not(.tool-window) .window-titlebar,
-body>.window-titlebar {
-    font-weight: bold;
+body > .window-titlebar {
+  font-weight: bold;
 }
 
 .os-window:not(.focused) .window-titlebar {
-    background: darkgray;
-    background: linear-gradient(to right, rgb(128, 128, 128) 0%, rgb(181, 181, 181) 100%);
-    background: linear-gradient(to right, var(--InactiveTitle) 0%, var(--GradientInactiveTitle) 100%);
+  background: darkgray;
+  background: linear-gradient(
+    to right,
+    rgb(128, 128, 128) 0%,
+    rgb(181, 181, 181) 100%
+  );
+  background: linear-gradient(
+    to right,
+    var(--InactiveTitle) 0%,
+    var(--GradientInactiveTitle) 100%
+  );
 
-    color: rgb(192, 192, 192);
+  color: rgb(192, 192, 192);
 
-    color: var(--InactiveTitleText);
+  color: var(--InactiveTitleText);
 }
 
 .os-window.rtl:not(.focused) .window-titlebar {
-    background: linear-gradient(to left, rgb(128, 128, 128) 0%, rgb(181, 181, 181) 100%);
-    background: linear-gradient(to left, var(--InactiveTitle) 0%, var(--GradientInactiveTitle) 100%);
+  background: linear-gradient(
+    to left,
+    rgb(128, 128, 128) 0%,
+    rgb(181, 181, 181) 100%
+  );
+  background: linear-gradient(
+    to left,
+    var(--InactiveTitle) 0%,
+    var(--GradientInactiveTitle) 100%
+  );
 }
 
 .os-window .window-titlebar {
-    height: 18px;
+  height: 18px;
 }
 
 .os-window.tool-window .window-titlebar {
-    height: 15px;
+  height: 15px;
 }
 
 .os-window .window-titlebar,
-body>.window-titlebar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    white-space: nowrap;
-    overflow: hidden;
-    flex-shrink: 0;
+body > .window-titlebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .os-window .window-title-area {
-    position: relative;
-    flex: 1;
+  position: relative;
+  flex: 1;
 }
 
 .os-window .window-titlebar .icon {
-    vertical-align: bottom;
+  vertical-align: bottom;
 }
 
 .os-window .window-title-area {
-    height: 16px;
+  height: 16px;
 }
 
 .os-window.tool-window .window-title-area {
-    height: 14px;
+  height: 14px;
 }
 
 .os-window .window-title {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: inline-block !important;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    padding-left: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: inline-block !important;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 2px;
 }
 
 /* Button Styles */
 button {
-    background-color: rgb(192, 192, 192);
-    background-color: var(--ButtonFace);
-    color: rgb(0, 0, 0);
-    color: var(--ButtonText);
-    -webkit-app-region: no-drag;
+  background-color: rgb(192, 192, 192);
+  background-color: var(--ButtonFace);
+  color: rgb(0, 0, 0);
+  color: var(--ButtonText);
+  -webkit-app-region: no-drag;
 }
 
 button:not(.lightweight) {
-    outline: none;
-    /* replaced with inner dotted focus ring (which is admittedly not so prominent...) */
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128) rgb(255, 255, 255);
-    border-color: var(--ButtonHilight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonHilight);
-    background-color: rgb(192, 192, 192);
-    background-color: var(--ButtonFace);
-    color: rgb(0, 0, 0);
-    color: var(--ButtonText);
-    /* as fallback */
-    position: relative;
-    /* for pseudo element(s) */
-    -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    -o-border-image: var(--button-normal-border-image);
-    border-image: var(--button-normal-border-image);
-    border-color: rgb(223, 223, 223) rgb(128, 128, 128) rgb(128, 128, 128) rgb(223, 223, 223);
-    border-color: var(--ButtonLight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonLight);
-    border-style: solid;
-    border-width: 2px 2px;
-    border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    border-image: var(--button-normal-border-image);
+  outline: none;
+  /* replaced with inner dotted focus ring (which is admittedly not so prominent...) */
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128)
+    rgb(255, 255, 255);
+  border-color: var(--ButtonHilight) var(--ButtonShadow) var(--ButtonShadow)
+    var(--ButtonHilight);
+  background-color: rgb(192, 192, 192);
+  background-color: var(--ButtonFace);
+  color: rgb(0, 0, 0);
+  color: var(--ButtonText);
+  /* as fallback */
+  position: relative;
+  /* for pseudo element(s) */
+  -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  -o-border-image: var(--button-normal-border-image);
+  border-image: var(--button-normal-border-image);
+  border-color: rgb(223, 223, 223) rgb(128, 128, 128) rgb(128, 128, 128)
+    rgb(223, 223, 223);
+  border-color: var(--ButtonLight) var(--ButtonShadow) var(--ButtonShadow)
+    var(--ButtonLight);
+  border-style: solid;
+  border-width: 2px 2px;
+  border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  border-image: var(--button-normal-border-image);
 }
 
 button:not(.lightweight).default {
-    -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h96v32h-64v64h-32v-96z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M160%2064h32v128h-128v-32h96v-96z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M96%2096h64v64h-64v-64z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 96 / 3px;
-    border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h96v32h-64v64h-32v-96z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M160%2064h32v128h-128v-32h96v-96z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M96%2096h64v64h-64v-64z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 96 / 3px;
-    -o-border-image: var(--button-default-border-image);
-    border-image: var(--button-default-border-image);
+  -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h96v32h-64v64h-32v-96z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M160%2064h32v128h-128v-32h96v-96z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M96%2096h64v64h-64v-64z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    96 / 3px;
+  border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h96v32h-64v64h-32v-96z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M160%2064h32v128h-128v-32h96v-96z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M96%2096h64v64h-64v-64z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    96 / 3px;
+  -o-border-image: var(--button-default-border-image);
+  border-image: var(--button-default-border-image);
 }
 
 button:not(.lightweight):enabled:hover:active {
-    -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    -o-border-image: var(--button-active-border-image);
-    border-image: var(--button-active-border-image);
+  -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  -o-border-image: var(--button-active-border-image);
+  border-image: var(--button-active-border-image);
 }
 
 button:not(.lightweight).default:enabled:hover:active {
-    -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    -o-border-image: var(--button-default-active-border-image);
-    border-image: var(--button-default-active-border-image);
+  -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  -o-border-image: var(--button-default-active-border-image);
+  border-image: var(--button-default-active-border-image);
 }
 
 /* TODO: offset content on press! */
@@ -182,213 +228,226 @@ button:not(.lightweight).default:enabled:hover:active {
 /* omg, a thought... what if I used feDisplacementMap SVG filter... */
 
 button:not(.lightweight):focus::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    right: 2px;
-    bottom: 2px;
-    border: 1px dotted rgb(0, 0, 0);
-    border: 1px dotted var(--ButtonDkShadow);
-    /* ?? */
-    /* TODO: get exact inset dimensions, and have corners without dots ideally */
-    /* (could use outline instead of ::before at this point) */
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px dotted rgb(0, 0, 0);
+  border: 1px dotted var(--ButtonDkShadow);
+  /* ?? */
+  /* TODO: get exact inset dimensions, and have corners without dots ideally */
+  /* (could use outline instead of ::before at this point) */
 }
 
 button.lightweight {
-    outline: none;
-    /* these buttons are not usually keyboard accessible, or the focus it shown just by inset (menu buttons) */
+  outline: none;
+  /* these buttons are not usually keyboard accessible, or the focus it shown just by inset (menu buttons) */
 
-    border-style: solid;
-    border-width: 1px;
-    border-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
 }
 
 /* TODO: recommend preventing focus on click for lightweight buttons */
 button.lightweight:enabled:hover {
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128) rgb(255, 255, 255);
-    border-color: var(--ButtonHilight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonHilight);
-    background-color: rgb(192, 192, 192);
-    background-color: var(--ButtonFace);
-    color: rgb(0, 0, 0);
-    color: var(--ButtonText);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128)
+    rgb(255, 255, 255);
+  border-color: var(--ButtonHilight) var(--ButtonShadow) var(--ButtonShadow)
+    var(--ButtonHilight);
+  background-color: rgb(192, 192, 192);
+  background-color: var(--ButtonFace);
+  color: rgb(0, 0, 0);
+  color: var(--ButtonText);
 }
 
 button.lightweight:enabled:hover:active,
 button.lightweight.pressing,
 button.lightweight.pressed {
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
-    border-color: var(--ButtonShadow) var(--ButtonHilight) var(--ButtonHilight) var(--ButtonShadow);
-    background-color: rgb(192, 192, 192);
-    background-color: var(--ButtonFace);
-    color: rgb(0, 0, 0);
-    color: var(--ButtonText);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255)
+    rgb(128, 128, 128);
+  border-color: var(--ButtonShadow) var(--ButtonHilight) var(--ButtonHilight)
+    var(--ButtonShadow);
+  background-color: rgb(192, 192, 192);
+  background-color: var(--ButtonFace);
+  color: rgb(0, 0, 0);
+  color: var(--ButtonText);
 }
 
 button:disabled {
-    color: rgb(128, 128, 128);
-    color: var(--GrayText);
-    text-shadow: 1px 1px 0px rgb(255, 255, 255);
-    text-shadow: 1px 1px 0px var(--ButtonHilight);
+  color: rgb(128, 128, 128);
+  color: var(--GrayText);
+  text-shadow: 1px 1px 0px rgb(255, 255, 255);
+  text-shadow: 1px 1px 0px var(--ButtonHilight);
 }
 
 button:not(.lightweight).toggle:enabled:hover:active,
 button:not(.lightweight).pressing {
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
-    border-color: var(--ButtonShadow) var(--ButtonHilight) var(--ButtonHilight) var(--ButtonShadow);
-    background-color: rgb(192, 192, 192);
-    background-color: var(--ButtonFace);
-    color: rgb(0, 0, 0);
-    color: var(--ButtonText);
-    /* as fallback */
-    position: relative;
-    /* for pseudo element(s) */
-    -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    -o-border-image: var(--inset-deep-border-image);
-    border-image: var(--inset-deep-border-image);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255)
+    rgb(128, 128, 128);
+  border-color: var(--ButtonShadow) var(--ButtonHilight) var(--ButtonHilight)
+    var(--ButtonShadow);
+  background-color: rgb(192, 192, 192);
+  background-color: var(--ButtonFace);
+  color: rgb(0, 0, 0);
+  color: var(--ButtonText);
+  /* as fallback */
+  position: relative;
+  /* for pseudo element(s) */
+  -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  -o-border-image: var(--inset-deep-border-image);
+  border-image: var(--inset-deep-border-image);
 }
 
 button:not(.lightweight).toggle:enabled:hover:active,
 button:not(.lightweight).pressing {
-    border-color: rgb(128, 128, 128);
-    border-color: var(--ButtonShadow);
-    border-style: solid;
-    border-width: 2px 2px;
+  border-color: rgb(128, 128, 128);
+  border-color: var(--ButtonShadow);
+  border-style: solid;
+  border-width: 2px 2px;
 }
 
 button:not(.lightweight).toggle.selected,
 button:not(.lightweight).pressed {
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
-    border-color: var(--ButtonShadow) var(--ButtonHilight) var(--ButtonHilight) var(--ButtonShadow);
-    background-color: rgb(192, 192, 192);
-    background-color: var(--ButtonFace);
-    color: rgb(0, 0, 0);
-    color: var(--ButtonText);
-    /* as fallback */
-    position: relative;
-    /* for pseudo element(s) */
-    -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
-    -o-border-image: var(--inset-deep-border-image);
-    border-image: var(--inset-deep-border-image);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255)
+    rgb(128, 128, 128);
+  border-color: var(--ButtonShadow) var(--ButtonHilight) var(--ButtonHilight)
+    var(--ButtonShadow);
+  background-color: rgb(192, 192, 192);
+  background-color: var(--ButtonFace);
+  color: rgb(0, 0, 0);
+  color: var(--ButtonText);
+  /* as fallback */
+  position: relative;
+  /* for pseudo element(s) */
+  -o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E")
+    64 / 2px;
+  -o-border-image: var(--inset-deep-border-image);
+  border-image: var(--inset-deep-border-image);
 }
 
 button:not(.lightweight).toggle.selected,
 button:not(.lightweight).pressed {
-    border-color: rgb(128, 128, 128);
-    border-color: var(--ButtonShadow);
-    border-style: solid;
-    border-width: 2px 2px;
+  border-color: rgb(128, 128, 128);
+  border-color: var(--ButtonShadow);
+  border-style: solid;
+  border-width: 2px 2px;
 }
 
 button:not(.lightweight).toggle.selected,
 button:not(.lightweight).pressed {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2P8/////4MHDzIwHjhw4L+9vT0DAHAFCj6esq3FAAAAAElFTkSuQmCC") repeat;
-    background: var(--checker) repeat;
-    -ms-interpolation-mode: nearest-neighbor;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: pixelated;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2P8/////4MHDzIwHjhw4L+9vT0DAHAFCj6esq3FAAAAAElFTkSuQmCC")
+    repeat;
+  background: var(--checker) repeat;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
 }
 
 .window-button {
-    display: block;
-    width: 16px;
-    height: 14px;
-    padding: 0;
-    margin: 2px 0;
+  display: block;
+  width: 16px;
+  height: 14px;
+  padding: 0;
+  margin: 2px 0;
 }
 
 .window-button-icon {
-    display: block;
-    /* background-image: url("images/titlebar-buttons.png"); */
-    --sprite-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAKCAYAAADo3z3CAAAAoUlEQVRIS9VVWw7AIAib9z/0FpZgCOFRgpluf9MClhYdV++7gfDhYLxYDw+UyiHd5F8S5lr6zNa6Xpv/KwhHOahQpLB1+CwfycgYrwmE0WK8MTsIR1aOGsR+NYkkYzN5/pGwVA9xA/diq8LeHCKuQxQ+aoYt2yJWtpSNZth0edRpGVC5eGQcSg4hXLml3fdpBeHs8evWyPKX9ruXVqnYCeAHA8IyC9K2kmkAAAAASUVORK5CYII=");
-    --sprite-y: 0;
-    -ms-interpolation-mode: nearest-neighbor;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: pixelated;
-    width: 12px;
-    height: 10px;
-    position: relative;
-    pointer-events: none;
+  display: block;
+  /* background-image: url("images/titlebar-buttons.png"); */
+  --sprite-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAKCAYAAADo3z3CAAAAoUlEQVRIS9VVWw7AIAib9z/0FpZgCOFRgpluf9MClhYdV++7gfDhYLxYDw+UyiHd5F8S5lr6zNa6Xpv/KwhHOahQpLB1+CwfycgYrwmE0WK8MTsIR1aOGsR+NYkkYzN5/pGwVA9xA/diq8LeHCKuQxQ+aoYt2yJWtpSNZth0edRpGVC5eGQcSg4hXLml3fdpBeHs8evWyPKX9ruXVqnYCeAHA8IyC9K2kmkAAAAASUVORK5CYII=");
+  --sprite-y: 0;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  width: 12px;
+  height: 10px;
+  position: relative;
+  pointer-events: none;
 }
 
 .os-window .window-button:enabled:hover:active .window-button-icon,
 .os-window .window-button.pressing .window-button-icon {
-    top: 1px;
-    left: 1px;
+  top: 1px;
+  left: 1px;
 }
 
 .window-button .window-button-icon::before,
 .window-button .window-button-icon::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    -webkit-mask-image: var(--sprite-image);
-    mask-image: var(--sprite-image);
-    -webkit-mask-position: var(--sprite-x) var(--sprite-y);
-    mask-position: var(--sprite-x) var(--sprite-y);
-    background-color: rgb(0, 0, 0);
-    background-color: var(--ButtonText);
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-mask-image: var(--sprite-image);
+  mask-image: var(--sprite-image);
+  -webkit-mask-position: var(--sprite-x) var(--sprite-y);
+  mask-position: var(--sprite-x) var(--sprite-y);
+  background-color: rgb(0, 0, 0);
+  background-color: var(--ButtonText);
 }
 
 .window-button:disabled .window-button-icon::before {
-    background-color: rgb(255, 255, 255);
-    background-color: var(--ButtonHilight);
-    left: 1px;
-    top: 1px;
+  background-color: rgb(255, 255, 255);
+  background-color: var(--ButtonHilight);
+  left: 1px;
+  top: 1px;
 }
 
 .window-button:enabled .window-button-icon::after {
-    display: none;
+  display: none;
 }
 
 .window-button:disabled .window-button-icon::after {
-    background-color: rgb(128, 128, 128);
-    background-color: var(--GrayText);
+  background-color: rgb(128, 128, 128);
+  background-color: var(--GrayText);
 }
 
 .window-action-close .window-button-icon {
-    --sprite-x: calc(-3 * 13px - 1px);
+  --sprite-x: calc(-3 * 13px - 1px);
 }
 
 .window-action-maximize .window-button-icon {
-    --sprite-x: calc(-1 * 13px - 1px);
+  --sprite-x: calc(-1 * 13px - 1px);
 }
 
 .window-action-restore .window-button-icon {
-    --sprite-x: calc(-2 * 13px - 1px);
+  --sprite-x: calc(-2 * 13px - 1px);
 }
 
 .window-action-minimize .window-button-icon {
-    --sprite-x: calc(-0 * 13px - 1px);
+  --sprite-x: calc(-0 * 13px - 1px);
 }
 
 .window-close-button {
-    margin-left: 2px;
-    margin-right: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 .os-window.tool-window .window-close-button {
-    width: 11px;
-    height: 11px;
+  width: 11px;
+  height: 11px;
 }
 
 .os-window.tool-window .window-close-button .window-button-icon {
-    width: 7px;
-    height: 7px;
-    --sprite-x: 7px;
+  width: 7px;
+  height: 7px;
+  --sprite-x: 7px;
 }
