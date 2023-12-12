@@ -15,3 +15,6 @@ fidelity.
 
 Run `npm run dev` to watch `src` and `public` directories and rebuild the
 project on changes
+
+## Source
+https://github.com/1j01/jspaint
