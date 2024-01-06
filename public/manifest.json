@@ -1,7 +1,7 @@
 {
   "manifest_version": "ext-v1",
   "name": "JS Paint - A MS Paint remake for EXT.",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "short_name": "JS Paint",
   "description": "A pixel-perfect MS Paint remake for EXT and more. JS Paint recreates every tool and menu of MS Paint, and even little-known features, to a high degree of fidelity.",
   "author": "EXT, Inc.",
